@@ -11,3 +11,5 @@ WITH MOVE 'playdateappdb' TO '/var/opt/mssql/data/playdateappdb.mdf',
 MOVE 'playdateappdb_log' TO '/var/opt/mssql/data/playdateappdb_log.ldf',
 REPLACE;
 
+video: https://www.youtube.com/watch?v=9fkrcoXNvG0
+
