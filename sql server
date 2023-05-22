@@ -1,1 +1,10 @@
 step1: docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Google0114224@' -v /home/amr/Desktop/docker_data:/var/opt/mssql/backup -p 1433:1433 --name sql_server_container_4 -d mcr.microsoft.com/mssql/server
+
+step2:
+RESTORE FILELISTONLY FROM DISK = N'/home/desktop/docker_data/playdate_buckup.bak'
+
+RESTORE DATABASE master
+FROM DISK = N'/home/desktop/docker_data/playdate_buckup.bak'
+WITH MOVE 'playdateappdb' TO '/var/opt/mssql/data/playdateappdb.mdf',
+MOVE 'playdateappdb_log' TO '/var/opt/mssql/data/playdateappdb_log.ldf',
+REPLACE;
