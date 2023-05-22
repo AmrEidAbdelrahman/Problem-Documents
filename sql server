@@ -1,0 +1,1 @@
+step1: docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Google0114224@' -v /home/amr/Desktop/docker_data:/var/opt/mssql/backup -p 1433:1433 --name sql_server_container_4 -d mcr.microsoft.com/mssql/server
