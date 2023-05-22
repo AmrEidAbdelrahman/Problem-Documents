@@ -3,8 +3,11 @@ step1: docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Google0114224@' -v /home/am
 step2:
 RESTORE FILELISTONLY FROM DISK = N'/home/desktop/docker_data/playdate_buckup.bak'
 
-RESTORE DATABASE master
-FROM DISK = N'/home/desktop/docker_data/playdate_buckup.bak'
+RESTORE FILELISTONLY FROM DISK = N'/var/opt/mssql/backup/22-05-2023_playdateappdb.bak'
+
+RESTORE DATABASE playdateappdb
+FROM DISK = N'/var/opt/mssql/backup/22-05-2023_playdateappdb.bak'
 WITH MOVE 'playdateappdb' TO '/var/opt/mssql/data/playdateappdb.mdf',
 MOVE 'playdateappdb_log' TO '/var/opt/mssql/data/playdateappdb_log.ldf',
 REPLACE;
+
